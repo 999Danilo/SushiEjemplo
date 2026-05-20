@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kaizen Sushi</title>
 
-  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ICONS -->
   <script src="https://kit.fontawesome.com/a2d9d5a64f.js" crossorigin="anonymous"></script>
 
   <style>
@@ -28,13 +26,9 @@
       overflow-x:hidden;
     }
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+    a{ text-decoration:none; color:inherit; }
 
-    /* NAVBAR */
-
+    /* NAV */
     nav{
       position:fixed;
       width:100%;
@@ -53,17 +47,11 @@
       font-size:30px;
       font-weight:700;
       color:#ff3c3c;
-      letter-spacing:1px;
     }
 
     .nav-links{
       display:flex;
-      gap:30px;
-    }
-
-    .nav-links a{
-      transition:0.3s;
-      font-size:15px;
+      gap:25px;
     }
 
     .nav-links a:hover{
@@ -71,12 +59,11 @@
     }
 
     /* HERO */
-
     .hero{
       height:100vh;
       background:
-      linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-      url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=1600&auto=format&fit=crop');
+      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c');
       background-size:cover;
       background-position:center;
       display:flex;
@@ -86,13 +73,10 @@
 
     .hero-content{
       max-width:700px;
-      animation:fadeUp 1s ease;
     }
 
     .hero-content h1{
-      font-size:75px;
-      line-height:1.1;
-      margin-bottom:20px;
+      font-size:70px;
     }
 
     .hero-content span{
@@ -100,26 +84,16 @@
     }
 
     .hero-content p{
-      color:#d6d6d6;
-      line-height:1.8;
-      margin-bottom:35px;
-      font-size:18px;
-    }
-
-    .buttons{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
+      margin:20px 0;
+      color:#ccc;
     }
 
     .btn{
-      padding:15px 30px;
+      padding:14px 28px;
       border-radius:50px;
-      transition:0.3s;
-      font-weight:600;
       border:none;
       cursor:pointer;
-      font-size:16px;
+      font-weight:600;
     }
 
     .btn-primary{
@@ -127,618 +101,234 @@
       color:white;
     }
 
-    .btn-primary:hover{
-      transform:translateY(-4px);
-      background:#ff5a5a;
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,0.2);
-      backdrop-filter:blur(10px);
-      background:transparent;
-      color:white;
-    }
-
-    .btn-secondary:hover{
-      background:white;
-      color:black;
-    }
-
-    /* SECTION */
-
-    section{
-      padding:100px 8%;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h2{
-      font-size:42px;
-      margin-bottom:10px;
-    }
-
-    .section-title p{
-      color:#b8b8b8;
-    }
-
-    /* CARDS */
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      background:#141414;
-      border-radius:25px;
-      overflow:hidden;
-      border:1px solid #232323;
-      transition:0.4s;
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-    }
-
-    .card img{
-      width:100%;
-      height:260px;
-      object-fit:cover;
-    }
-
-    .card-content{
-      padding:25px;
-    }
-
-    .card-content h3{
-      margin-bottom:10px;
-      font-size:24px;
-    }
-
-    .card-content p{
-      color:#c9c9c9;
-      line-height:1.7;
-      margin-bottom:15px;
-    }
-
-    .price{
-      color:#ff3c3c;
-      font-size:18px;
-      font-weight:600;
-    }
-
     /* ABOUT */
-
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
+    section{
+      padding:90px 8%;
     }
 
-    .about img{
-      width:100%;
-      height:520px;
-      object-fit:cover;
-      border-radius:25px;
-    }
-
-    .about-text h2{
-      font-size:46px;
-      margin-bottom:20px;
-    }
-
-    .about-text p{
-      color:#c8c8c8;
-      line-height:1.9;
-      margin-bottom:20px;
-    }
-
-    /* CONTACT */
-
-    .contact{
-      text-align:center;
-    }
-
-    .socials{
-      display:flex;
-      justify-content:center;
-      gap:25px;
-      margin-top:40px;
-      flex-wrap:wrap;
-    }
-
-    .social{
-      width:70px;
-      height:70px;
-      border-radius:50%;
-      background:#171717;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-      transition:0.3s;
-    }
-
-    .social:hover{
-      background:#ff3c3c;
-      transform:translateY(-5px);
-    }
-
-    /* MODAL CARTA */
-
+    /* MODAL */
     .menu-modal{
       position:fixed;
       inset:0;
       background:rgba(0,0,0,0.75);
-      backdrop-filter:blur(8px);
-      z-index:9999;
+      backdrop-filter:blur(10px);
       display:none;
       justify-content:center;
       align-items:center;
-      padding:30px;
+      z-index:9999;
+      padding:20px;
     }
 
     .menu-content{
       width:100%;
-      max-width:1200px;
+      max-width:1100px;
       max-height:90vh;
       overflow-y:auto;
       background:#111;
       border-radius:25px;
-      padding:40px;
-      border:1px solid #252525;
+      padding:30px;
+      border:1px solid #222;
     }
 
     .menu-header{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:35px;
-    }
-
-    .menu-header h2{
-      font-size:40px;
+      margin-bottom:25px;
     }
 
     .close-btn{
-      width:50px;
-      height:50px;
-      border:none;
-      border-radius:50%;
       background:#ff3c3c;
-      color:white;
-      font-size:22px;
+      border:none;
+      width:45px;
+      height:45px;
+      border-radius:50%;
       cursor:pointer;
-      transition:0.3s;
+      color:white;
+      font-size:18px;
     }
 
-    .close-btn:hover{
-      transform:rotate(90deg);
-    }
-
+    /* GRID */
     .menu-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
+      gap:20px;
     }
 
     .menu-card{
       background:#181818;
-      border-radius:20px;
-      padding:25px;
-      border:1px solid #242424;
-      transition:0.3s;
+      border-radius:18px;
+      padding:15px;
+      transition:.3s;
     }
 
     .menu-card:hover{
       transform:translateY(-5px);
-      border:1px solid #ff3c3c;
+    }
+
+    .menu-card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:14px;
+      margin-bottom:10px;
     }
 
     .menu-card h3{
       color:#ff3c3c;
-      margin-bottom:10px;
+      margin-bottom:5px;
     }
 
     .menu-card p{
-      color:#c8c8c8;
-      line-height:1.6;
-      margin-bottom:15px;
+      font-size:14px;
+      color:#ccc;
+      margin-bottom:8px;
     }
 
     .menu-card span{
-      font-size:18px;
       font-weight:600;
     }
 
-    /* FOOTER */
-
-    footer{
-      border-top:1px solid #1f1f1f;
-      text-align:center;
-      padding:40px;
-      color:#979797;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      width:65px;
-      height:65px;
-      border-radius:50%;
-      background:#25D366;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:32px;
-      z-index:999;
-      box-shadow:0 10px 30px rgba(0,0,0,0.4);
-      transition:0.3s;
-    }
-
-    .whatsapp:hover{
-      transform:scale(1.1);
-    }
-
-    /* ANIMATION */
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-      .hero-content h1{
-        font-size:52px;
-      }
-
-      .about{
-        grid-template-columns:1fr;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-    }
-
   </style>
-
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+<!-- NAV -->
+<nav>
+  <div class="logo">KAIZEN SUSHI</div>
+</nav>
 
-  <nav>
+<!-- HERO -->
+<section class="hero">
 
-    <div class="logo">
-      KAIZEN SUSHI
+  <div class="hero-content">
+
+    <h1>Sushi premium <span>Kaizen</span></h1>
+
+    <p>Experiencia japonesa moderna con rolls únicos y frescos.</p>
+
+    <button class="btn btn-primary" onclick="openMenu()">
+      Ver Carta
+    </button>
+
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div class="menu-modal" id="menuModal">
+
+  <div class="menu-content">
+
+    <div class="menu-header">
+      <h2>Nuestra Carta</h2>
+      <button class="close-btn" onclick="closeMenu()">✕</button>
     </div>
 
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#especialidades">Especialidades</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </div>
+    <div class="menu-grid">
 
-  </nav>
-
-  <!-- HERO -->
-
-  <section class="hero" id="inicio">
-
-    <div class="hero-content">
-
-      <h1>
-        Sushi premium
-        con sabor
-        <span>inolvidable.</span>
-      </h1>
-
-      <p>
-        Rolls exclusivos, ingredientes frescos y una experiencia
-        moderna inspirada en la cocina japonesa contemporánea.
-      </p>
-
-      <div class="buttons">
-
-        <button class="btn btn-primary" onclick="openMenu()">
-          Ver Carta
-        </button>
-
-        <a href="https://wa.me/56912345678" class="btn btn-secondary">
-          Pedir por WhatsApp
-        </a>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
+        <h3>Dragon Roll</h3>
+        <p>Salmón, palta, queso crema y spicy mayo</p>
+        <span>$11.990</span>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- ESPECIALIDADES -->
-
-  <section id="especialidades">
-
-    <div class="section-title">
-      <h2>Rolls Destacados</h2>
-      <p>Los favoritos de nuestros clientes.</p>
-    </div>
-
-    <div class="cards">
-
-      <div class="card">
-
-        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?q=80&w=1000&auto=format&fit=crop">
-
-        <div class="card-content">
-
-          <h3>Dragon Roll</h3>
-
-          <p>
-            Camarón tempura, palta cremosa y salsa especial Kaizen.
-          </p>
-
-          <div class="price">$11.990</div>
-
-        </div>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351">
+        <h3>Tokyo Roll</h3>
+        <p>Camarón tempura y queso crema</p>
+        <span>$12.500</span>
       </div>
 
-      <div class="card">
-
-        <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?q=80&w=1000&auto=format&fit=crop">
-
-        <div class="card-content">
-
-          <h3>Tokyo Roll</h3>
-
-          <p>
-            Salmón fresco, queso crema y topping spicy premium.
-          </p>
-
-          <div class="price">$12.500</div>
-
-        </div>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+        <h3>Crunch Roll</h3>
+        <p>Pollo crispy y teriyaki</p>
+        <span>$10.900</span>
       </div>
 
-      <div class="card">
-
-        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=1000&auto=format&fit=crop">
-
-        <div class="card-content">
-
-          <h3>Tempura Mix</h3>
-
-          <p>
-            Mix crujiente de camarón y verduras con salsa teriyaki.
-          </p>
-
-          <div class="price">$9.900</div>
-
-        </div>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1615361200141-f4593b3d7e2a">
+        <h3>Avocado Roll</h3>
+        <p>Palta cremosa y queso crema</p>
+        <span>$10.500</span>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section id="nosotros">
-
-    <div class="about">
-
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop">
-
-      <div class="about-text">
-
-        <h2>
-          Cocina japonesa moderna.
-        </h2>
-
-        <p>
-          Fusionamos tradición japonesa con una experiencia visual
-          elegante y moderna para crear algo realmente distinto.
-        </p>
-
-        <p>
-          
-        </p>
-
-        <a href="#" class="btn btn-primary">
-          Ver Instagram
-        </a>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1617196035154-1e7e6c2a2f43">
+        <h3>Kaizen Roll</h3>
+        <p>Salmón flameado y cebollín</p>
+        <span>$13.500</span>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section id="contacto">
-
-    <div class="contact">
-
-      <div class="section-title">
-
-        <h2>Encuéntranos</h2>
-
-        <p>
-          calle 1234 santiago maipu.
-        </p>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1607301405390-d831c242f59a">
+        <h3>California Roll</h3>
+        <p>Kanikama y palta</p>
+        <span>$9.900</span>
       </div>
 
-      <div class="socials">
-
-        <a href="#" class="social">
-          <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="#" class="social">
-          <i class="fab fa-tiktok"></i>
-        </a>
-
-        <a href="#" class="social">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <a href="#" class="social">
-          <i class="fas fa-map-marker-alt"></i>
-        </a>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+        <h3>Spicy Tuna</h3>
+        <p>Atún picante y arroz premium</p>
+        <span>$12.990</span>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    © 2026 Kaizen Sushi — Todos los derechos reservados.
-  </footer>
-
-  <!-- MODAL CARTA -->
-
-  <div class="menu-modal" id="menuModal">
-
-    <div class="menu-content">
-
-      <div class="menu-header">
-
-        <h2>Nuestra Carta</h2>
-
-        <button class="close-btn" onclick="closeMenu()">
-          ✕
-        </button>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3">
+        <h3>Cheese Roll</h3>
+        <p>Queso crema y pollo crispy</p>
+        <span>$10.990</span>
       </div>
 
-      <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d">
+        <h3>Sensei Roll</h3>
+        <p>Salmón y teriyaki</p>
+        <span>$13.200</span>
+      </div>
 
-        <div class="menu-card">
-          <h3>Dragon Roll</h3>
-          <p>Salmón premium, palta y salsa spicy.</p>
-          <span>$11.990</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
+        <h3>Furai Mix</h3>
+        <p>Mix frito con spicy mayo</p>
+        <span>$14.500</span>
+      </div>
 
-        <div class="menu-card">
-          <h3>Tokyo Roll</h3>
-          <p>Camarón tempura y queso crema.</p>
-          <span>$12.500</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3">
+        <h3>Samurai Roll</h3>
+        <p>Atún premium y salsa nikkei</p>
+        <span>$14.200</span>
+      </div>
 
-        <div class="menu-card">
-          <h3>Crunch Roll</h3>
-          <p>Pollo crispy y salsa teriyaki.</p>
-          <span>$10.900</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Kaizen Roll</h3>
-          <p>Salmón flameado y cebollín.</p>
-          <span>$13.500</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>California Premium</h3>
-          <p>Kanikama, palta y sésamo tostado.</p>
-          <span>$9.900</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Spicy Tuna</h3>
-          <p>Atún picante y salsa especial.</p>
-          <span>$12.990</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Ebi Tempura</h3>
-          <p>Camarón furai y salsa acevichada.</p>
-          <span>$11.500</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Avocado Roll</h3>
-          <p>Palta cremosa y queso crema.</p>
-          <span>$10.500</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Furai Mix</h3>
-          <p>Mix frito premium con spicy mayo.</p>
-          <span>$14.500</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Sensei Roll</h3>
-          <p>Salmón y salsa teriyaki.</p>
-          <span>$13.200</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Cheese Roll</h3>
-          <p>Queso crema, pollo y palta.</p>
-          <span>$10.990</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Samurai Roll</h3>
-          <p>Atún premium y salsa nikkei.</p>
-          <span>$14.200</span>
-        </div>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1562158070-57a3b4c9c3e4">
+        <h3>Ebi Tempura</h3>
+        <p>Camarón tempura y acevichado</p>
+        <span>$11.500</span>
       </div>
 
     </div>
 
   </div>
 
-  <!-- WHATSAPP -->
+</div>
 
-  <a
-    href="https://wa.me/56912345678"
-    class="whatsapp"
-    target="_blank"
-  >
-    <i class="fab fa-whatsapp"></i>
-  </a>
+<script>
 
-  <script>
+function openMenu(){
+  document.getElementById("menuModal").style.display = "flex";
+}
 
-    function openMenu(){
-      document.getElementById("menuModal").style.display = "flex";
-    }
+function closeMenu(){
+  document.getElementById("menuModal").style.display = "none";
+}
 
-    function closeMenu(){
-      document.getElementById("menuModal").style.display = "none";
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
