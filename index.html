@@ -1,31 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sushi Web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaizen Sushi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/a2d9d5a64f.js" crossorigin="anonymous"></script>
 
   <style>
 
-    body{
+    *{
       margin:0;
-      font-family:Arial;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
       background:#0b0b0b;
       color:white;
+      overflow-x:hidden;
     }
 
-    /* BOTÓN ORIGINAL */
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.45);
+      backdrop-filter:blur(10px);
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:#ff3c3c;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
+
+    .nav-links a:hover{
+      color:#ff3c3c;
+    }
+
+    /* HERO (NO CAMBIADO) */
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),
+      url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      padding:0 8%;
+    }
+
+    .hero-content{
+      max-width:700px;
+    }
+
+    .hero-content h1{
+      font-size:75px;
+      line-height:1.1;
+    }
+
+    .hero-content span{
+      color:#ff3c3c;
+    }
+
+    .hero-content p{
+      margin-top:20px;
+      color:#ccc;
+      font-size:18px;
+      line-height:1.7;
+    }
+
     .btn{
-      padding:15px 25px;
-      background:#ff3c3c;
+      padding:15px 30px;
+      border-radius:50px;
       border:none;
-      color:white;
-      border-radius:30px;
       cursor:pointer;
-      font-size:16px;
+      font-weight:600;
     }
 
-    /* ===== MODAL CARTA ===== */
+    .btn-primary{
+      background:#ff3c3c;
+      color:white;
+      margin-top:30px;
+    }
+
+    section{
+      padding:90px 8%;
+    }
+
+    /* ===== MODAL (NUEVO SOLO AÑADIDO) ===== */
 
     .menu-modal{
       position:fixed;
@@ -45,8 +132,8 @@
       max-height:90vh;
       overflow-y:auto;
       background:#111;
-      border-radius:20px;
-      padding:25px;
+      border-radius:25px;
+      padding:30px;
     }
 
     .menu-header{
@@ -57,17 +144,15 @@
     }
 
     .close-btn{
-      width:40px;
-      height:40px;
-      border-radius:50%;
+      width:45px;
+      height:45px;
       border:none;
+      border-radius:50%;
       background:#ff3c3c;
       color:white;
       cursor:pointer;
       font-size:18px;
     }
-
-    /* GRID CARTA */
 
     .menu-grid{
       display:grid;
@@ -91,154 +176,171 @@
 
     .menu-card h3{
       color:#ff3c3c;
-      margin:0 0 5px 0;
+      margin-bottom:5px;
     }
 
     .menu-card p{
       font-size:14px;
       color:#ccc;
-      margin:0 0 8px 0;
+      margin-bottom:8px;
     }
 
     .menu-card span{
-      font-weight:bold;
+      font-weight:600;
     }
 
   </style>
-
 </head>
 
 <body>
 
-  <!-- TU WEB SIGUE IGUAL -->
-  <div style="padding:60px; text-align:center;">
+<!-- NAV ORIGINAL -->
+<nav>
+  <div class="logo">KAIZEN SUSHI</div>
+  <div class="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#especialidades">Especialidades</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
 
-    <h1>Sushi Premium</h1>
+<!-- HERO ORIGINAL (NO TOCADO) -->
+<section class="hero" id="inicio">
 
-    <p>Experiencia japonesa moderna</p>
+  <div class="hero-content">
 
-    <!-- BOTÓN MODIFICADO (YA HECHO) -->
-    <button class="btn" onclick="openMenu()">
+    <h1>
+      Sushi premium <span>Kaizen</span>
+    </h1>
+
+    <p>
+      Experiencia japonesa moderna con ingredientes frescos y rolls exclusivos.
+    </p>
+
+    <!-- SOLO CAMBIO AQUÍ -->
+    <button class="btn btn-primary" onclick="openMenu()">
       Ver Carta
     </button>
 
   </div>
 
-  <!-- ===== MODAL CARTA COMPLETA ===== -->
+</section>
 
-  <div class="menu-modal" id="menuModal">
+<!-- ===== MODAL NUEVO ===== -->
+<div class="menu-modal" id="menuModal">
 
-    <div class="menu-content">
+  <div class="menu-content">
 
-      <div class="menu-header">
-        <h2>Nuestra Carta</h2>
-        <button class="close-btn" onclick="closeMenu()">✕</button>
+    <div class="menu-header">
+      <h2>Nuestra Carta</h2>
+      <button class="close-btn" onclick="closeMenu()">✕</button>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
+        <h3>Dragon Roll</h3>
+        <p>Salmón, palta, queso crema y spicy mayo</p>
+        <span>$11.990</span>
       </div>
 
-      <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351">
+        <h3>Tokyo Roll</h3>
+        <p>Camarón tempura, queso crema</p>
+        <span>$12.500</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
-          <h3>Dragon Roll</h3>
-          <p>Salmón, palta, queso crema y spicy mayo</p>
-          <span>$11.990</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+        <h3>Crunch Roll</h3>
+        <p>Pollo crispy y teriyaki</p>
+        <span>$10.900</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351">
-          <h3>Tokyo Roll</h3>
-          <p>Camarón tempura y queso crema</p>
-          <span>$12.500</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1615361200141-f4593b3d7e2a">
+        <h3>Avocado Roll</h3>
+        <p>Palta y queso crema</p>
+        <span>$10.500</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
-          <h3>Crunch Roll</h3>
-          <p>Pollo crispy y teriyaki</p>
-          <span>$10.900</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1607301405390-d831c242f59a">
+        <h3>California Roll</h3>
+        <p>Kanikama y palta</p>
+        <span>$9.900</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1615361200141-f4593b3d7e2a">
-          <h3>Avocado Roll</h3>
-          <p>Palta, queso crema</p>
-          <span>$10.500</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+        <h3>Spicy Tuna</h3>
+        <p>Atún picante</p>
+        <span>$12.990</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1607301405390-d831c242f59a">
-          <h3>California Roll</h3>
-          <p>Kanikama y palta</p>
-          <span>$9.900</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1562158070-57a3b4c9c3e4">
+        <h3>Ebi Tempura</h3>
+        <p>Camarón tempura</p>
+        <span>$11.500</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
-          <h3>Spicy Tuna</h3>
-          <p>Atún picante y mayo spicy</p>
-          <span>$12.990</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3">
+        <h3>Cheese Roll</h3>
+        <p>Queso crema y pollo</p>
+        <span>$10.990</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1562158070-57a3b4c9c3e4">
-          <h3>Ebi Tempura</h3>
-          <p>Camarón tempura y acevichado</p>
-          <span>$11.500</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d">
+        <h3>Sensei Roll</h3>
+        <p>Salmón y teriyaki</p>
+        <span>$13.200</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3">
-          <h3>Cheese Roll</h3>
-          <p>Queso crema y pollo crispy</p>
-          <span>$10.990</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1617196035154-1e7e6c2a2f43">
+        <h3>Kaizen Roll</h3>
+        <p>Salmón flameado</p>
+        <span>$13.500</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d">
-          <h3>Sensei Roll</h3>
-          <p>Salmón y teriyaki</p>
-          <span>$13.200</span>
-        </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
+        <h3>Samurai Roll</h3>
+        <p>Atún premium</p>
+        <span>$14.200</span>
+      </div>
 
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1617196035154-1e7e6c2a2f43">
-          <h3>Kaizen Roll</h3>
-          <p>Salmón flameado y cebollín</p>
-          <span>$13.500</span>
-        </div>
-
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
-          <h3>Samurai Roll</h3>
-          <p>Atún premium y salsa nikkei</p>
-          <span>$14.200</span>
-        </div>
-
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
-          <h3>Furai Mix</h3>
-          <p>Mix frito premium con spicy mayo</p>
-          <span>$14.500</span>
-        </div>
-
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
+        <h3>Furai Mix</h3>
+        <p>Mix frito premium</p>
+        <span>$14.500</span>
       </div>
 
     </div>
 
   </div>
 
-  <!-- JS FUNCIONAL -->
-  <script>
+</div>
 
-    function openMenu(){
-      document.getElementById("menuModal").style.display = "flex";
-    }
+<!-- JS -->
+<script>
 
-    function closeMenu(){
-      document.getElementById("menuModal").style.display = "none";
-    }
+function openMenu(){
+  document.getElementById("menuModal").style.display = "flex";
+}
 
-  </script>
+function closeMenu(){
+  document.getElementById("menuModal").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
