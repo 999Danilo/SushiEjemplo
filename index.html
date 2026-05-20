@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kaizen Sushi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,6 @@
       color:inherit;
     }
 
-    /* NAVBAR */
     nav{
       position:fixed;
       width:100%;
@@ -57,11 +56,6 @@
       gap:25px;
     }
 
-    .nav-links a:hover{
-      color:#ff3c3c;
-    }
-
-    /* HERO (NO CAMBIADO) */
     .hero{
       height:100vh;
       background:
@@ -80,7 +74,6 @@
 
     .hero-content h1{
       font-size:75px;
-      line-height:1.1;
     }
 
     .hero-content span{
@@ -90,7 +83,6 @@
     .hero-content p{
       margin-top:20px;
       color:#ccc;
-      font-size:18px;
       line-height:1.7;
     }
 
@@ -105,14 +97,10 @@
     .btn-primary{
       background:#ff3c3c;
       color:white;
-      margin-top:30px;
+      margin-top:25px;
     }
 
-    section{
-      padding:90px 8%;
-    }
-
-    /* ===== MODAL (NUEVO SOLO AÑADIDO) ===== */
+    /* ===== MODAL ===== */
 
     .menu-modal{
       position:fixed;
@@ -132,8 +120,8 @@
       max-height:90vh;
       overflow-y:auto;
       background:#111;
-      border-radius:25px;
-      padding:30px;
+      border-radius:20px;
+      padding:25px;
     }
 
     .menu-header{
@@ -144,14 +132,13 @@
     }
 
     .close-btn{
-      width:45px;
-      height:45px;
-      border:none;
+      width:40px;
+      height:40px;
       border-radius:50%;
+      border:none;
       background:#ff3c3c;
       color:white;
       cursor:pointer;
-      font-size:18px;
     }
 
     .menu-grid{
@@ -189,12 +176,28 @@
       font-weight:600;
     }
 
+    /* SECCIÓN EXTRA */
+    .section-title{
+      margin:30px 0 15px;
+      font-size:20px;
+      color:#ff3c3c;
+    }
+
+    /* UBICACIÓN */
+    .location{
+      margin-top:40px;
+      padding:15px;
+      background:#1a1a1a;
+      border-radius:15px;
+      text-align:center;
+      color:#ccc;
+    }
+
   </style>
 </head>
 
 <body>
 
-<!-- NAV ORIGINAL -->
 <nav>
   <div class="logo">KAIZEN SUSHI</div>
   <div class="nav-links">
@@ -205,20 +208,14 @@
   </div>
 </nav>
 
-<!-- HERO ORIGINAL (NO TOCADO) -->
 <section class="hero" id="inicio">
 
   <div class="hero-content">
 
-    <h1>
-      Sushi premium <span>Kaizen</span>
-    </h1>
+    <h1>Sushi premium <span>Kaizen</span></h1>
 
-    <p>
-      Experiencia japonesa moderna con ingredientes frescos y rolls exclusivos.
-    </p>
+    <p>Experiencia japonesa moderna con ingredientes frescos y sabores únicos.</p>
 
-    <!-- SOLO CAMBIO AQUÍ -->
     <button class="btn btn-primary" onclick="openMenu()">
       Ver Carta
     </button>
@@ -227,7 +224,7 @@
 
 </section>
 
-<!-- ===== MODAL NUEVO ===== -->
+<!-- ===== MODAL CARTA ===== -->
 <div class="menu-modal" id="menuModal">
 
   <div class="menu-content">
@@ -236,6 +233,9 @@
       <h2>Nuestra Carta</h2>
       <button class="close-btn" onclick="closeMenu()">✕</button>
     </div>
+
+    <!-- 🔥 MÁS PEDIDOS -->
+    <div class="section-title">🔥 Más pedidos</div>
 
     <div class="menu-grid">
 
@@ -249,7 +249,7 @@
       <div class="menu-card">
         <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351">
         <h3>Tokyo Roll</h3>
-        <p>Camarón tempura, queso crema</p>
+        <p>Camarón tempura y queso crema</p>
         <span>$12.500</span>
       </div>
 
@@ -266,6 +266,13 @@
         <p>Palta y queso crema</p>
         <span>$10.500</span>
       </div>
+
+    </div>
+
+    <!-- 🔥 CATA COMPLETA -->
+    <div class="section-title">🍣 Carta completa</div>
+
+    <div class="menu-grid">
 
       <div class="menu-card">
         <img src="https://images.unsplash.com/photo-1607301405390-d831c242f59a">
@@ -309,27 +316,19 @@
         <span>$13.500</span>
       </div>
 
-      <div class="menu-card">
-        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
-        <h3>Samurai Roll</h3>
-        <p>Atún premium</p>
-        <span>$14.200</span>
-      </div>
+    </div>
 
-      <div class="menu-card">
-        <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252">
-        <h3>Furai Mix</h3>
-        <p>Mix frito premium</p>
-        <span>$14.500</span>
-      </div>
-
+    <!-- 📍 UBICACIÓN -->
+    <div class="location">
+      📍 Santiago, Región Metropolitana, Chile  
+      <br>
+      Av. Ejemplo 123 - KAIZEN SUSHI
     </div>
 
   </div>
 
 </div>
 
-<!-- JS -->
 <script>
 
 function openMenu(){
